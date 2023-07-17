@@ -32,7 +32,7 @@ const data = {
             title: "Users | Moroccan DL",
             color: 3447003,
             thumbnail: {
-                url: 'https://cdn.discordapp.com/avatars/1129381791178948619/83a253ea5f350ad3e40f64e6b1aa97ae.webp'
+                url: 'https://media.discordapp.net/attachments/1098446867769073694/1130612570244522004/image.png'
               }
         }] })
     }
