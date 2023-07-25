@@ -1,13 +1,10 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
-const fs = require('fs')
-const dl = require('../../db/dl.json')
+const { EmbedBuilder } = require('discord.js')
+const dl = require('../db/dl.json')
 
-const data = {
-    data: new SlashCommandBuilder()
-    .setName("dl-users")
-    .setDescription("top Users in demon list"),
-    async execute(interaction){
+module.exports = {
+    async execute(interaction, client){
         const data = dl[0];
+        console.log(`${data}`)
         const arr = new Array();
         for (const key in data) {
             const name = key;
@@ -37,5 +34,3 @@ const data = {
         }] })
     }
 }
-
-module.exports = data;

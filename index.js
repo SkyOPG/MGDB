@@ -1,5 +1,15 @@
 const { GDClient } = require("./structs/client");
-const config = require("./structs/config");
+const config = require("./config/config");
+const { SlashCommandBuilder } = require('discord.js')
+
+const builder = new SlashCommandBuilder()
+.setName("progress")
+.setDescription('dio')
+.addSubcommand(sub => 
+    sub
+    .setName("lol")
+    .setDescription('a'));
+    console.log(`${JSON.stringify(builder)}`)
 
 const gdclient = new GDClient({
     intents: ["Guilds"]
@@ -25,8 +35,10 @@ gdclient.on("interactionCreate", async (interaction) => {
             await cmd.execute(interaction, gdclient);
         } catch(err){
             await interaction.reply({ content: "An error occured", ephemeral: true })
+            console.error(err)
         }
     }
 })
+process.on("unhandledRejection", () => {})
 
 gdclient.login(config.token)

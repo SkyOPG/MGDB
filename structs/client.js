@@ -1,5 +1,5 @@
 const { Client, Collection, REST, Routes } = require("discord.js");
-const config = require("./config.js");
+const config = require("../config/config.js");
 const path = require('path');
 const fs = require('fs')
 const { token, clientId } = config;
@@ -43,7 +43,7 @@ module.exports = {
         
             console.log(`Successfully reloaded ${data.length} application (/) commands.`);
           } catch (error) {
-            console.error(error);
+            console.log(error);
           }
         })()
         }

@@ -1,11 +1,8 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
-const DownDL = require('../../db/xlsx').down
-const { allowedUsers } = require("../../config/config")
+const { EmbedBuilder } = require('discord.js')
+const DownDL = require('../db/xlsx').down
+const { allowedUsers } = require("../config/config")
 
 module.exports = {
-    data: new SlashCommandBuilder()
-    .setName("dl-refresh")
-    .setDescription("refreshes the demon list"),
     async execute(interaction){
         if(!allowedUsers.includes(interaction.user.id)) return interaction.reply("You are not one of the DL moderators, thus you can't use this command")
         await interaction.deferReply()
