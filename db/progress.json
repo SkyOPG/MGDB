@@ -1,10 +1,16 @@
-[{
-    "user": "",
-    "discrim": "",
+[
+  {
+    "user": ".c32",
+    "discrim": "0",
     "progresses": [
-        {
-            "date": "",
-            "percentages": "" 
-        }
-    ] 
-}]
+      {
+        "date": "creationdate",
+        "percentages": []
+      },
+      {
+        "date": "8",
+        "percentages": "8"
+      }
+    ]
+  }
+]
